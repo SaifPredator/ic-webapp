@@ -12,7 +12,7 @@ pipeline {
            agent any
            steps {
               script {
-                sudo docker build --no-cache -f ./sources/app/Dockerfile_v1.0 -t SaifPredator/ic-webapp:v1.0 ./sources/app
+                sh 'docker build --no-cache -f ./sources/app/${DOCKERFILE_NAME} -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG ./sources/app'
 
 
               }
